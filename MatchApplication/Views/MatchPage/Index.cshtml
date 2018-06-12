@@ -1,0 +1,13 @@
+﻿@model MatchApplication.Models.Pages.MatchPage
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1>@Html.PropertyFor(m => m.Title)</h1>
+
+<p>@Html.PropertyFor(m => m.HomeTeam) mot @Html.PropertyFor(m => m.Awayteam)</p>
+
+<br/>
+<p>Kampstart @Html.PropertyFor(m => m.MatchStart)</p>
+<p>Kampslutt @Html.PropertyFor(m => m.MatchEnd)</p>
