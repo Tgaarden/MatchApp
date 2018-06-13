@@ -21,10 +21,10 @@ namespace MatchApplication.Models.Pages
             Order = 20)]
         public virtual string LastName { get; set; }
         [Display(
-            Name = "Alder",
+            Name = "Fødselsdato",
             GroupName = SystemTabNames.Content,
             Order = 30)]
-        public virtual int Age { get; set; }
+        public virtual int YearBorn { get; set; }
 
 
 

@@ -1,10 +1,10 @@
 ﻿@model MatchApplication.Models.Pages.FrontPage
 @{
-    ViewBag.Title = "Index";
+    ViewBag.Title = Model.Name;
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h2>Index</h2>
+<h1></h1>
 @foreach (var item in Model.FrontPageContent.FilteredItems)
 {
     <div>

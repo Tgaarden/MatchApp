@@ -1,0 +1,43 @@
+﻿@model MatchApplication.Models.ViewModels.LoginViewModel
+
+@using EPiServer.Editor
+@using EPiServer.Core
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="row page-header">
+    <div class="col-md-12">
+        <h1 class="display-3" align="center">Logg inn</h1>
+    </div>
+</div>
+
+<br />
+
+<div class="container" align="center">
+    <div class="col-md-8">
+
+        @using (Html.BeginForm("Login", "LoginPage", "Post"))
+        {
+            @Html.AntiForgeryToken()
+
+            @Html.TextBoxFor(m => m.Username, new { @class = "form-control", autofocus = "autofocus", placeholder = "Brukernavn" })
+            <br />
+            @Html.PasswordFor(m => m.Password, new { @class = "form-control", placeholder = "Passord" })
+            <br />
+
+            <input type="submit" value="Login" class="btn btn-lg btn-primary btn-block" />
+
+        }
+
+        @if (Model.ErrorMessage != null)
+        {
+            <br />
+            <div class="col-md-8">
+                <div class="alert alert-danger form-control">@Model.ErrorMessage</div>
+            </div>
+        }
+    </div>
+</div>
