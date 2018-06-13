@@ -87,7 +87,7 @@ namespace MatchApplication.Controllers
             }
             catch (Exception ex)
             {
-                model.ErrorMessage = "Noe gikk galt";
+                model.ErrorMessage = ex.ToString();
             }
 
             return View("Index", model);

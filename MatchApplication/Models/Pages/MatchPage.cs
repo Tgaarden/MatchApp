@@ -4,6 +4,8 @@ using EPiServer.Core;
 using EPiServer.DataAbstraction;
 using EPiServer.DataAnnotations;
 using EPiServer.SpecializedProperties;
+using MatchApplication.Infrastructure.Attributes;
+using MatchApplication.Infrastructure.Enums;
 
 namespace MatchApplication.Models.Pages
 {
@@ -40,5 +42,8 @@ namespace MatchApplication.Models.Pages
             Order = 50), AllowedTypes(typeof(TeamPage))]
         public virtual ContentReference Awayteam { get; set; }
 
+        [Display(Name = "Kampstatus", Order = 30)]
+        [EnumSelection(typeof(MatchStatus))]
+        public virtual MatchStatus MatchStatus { get; set; }
     }
 }

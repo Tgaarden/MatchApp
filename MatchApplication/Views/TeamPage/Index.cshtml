@@ -1,8 +1,39 @@
-﻿@model MatchApplication.Models.Pages.TeamPage
+﻿@model TeamPageViewModel
 @{
     ViewBag.Title = "Index";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h1>@Html.DisplayFor(m => m.TeamName)</h1>
+<div class="row page-header">
+    <div class="col-md-12">
+        <h1 class="display-3" align="center">@Html.DisplayFor(m => m.CurrentPage.TeamName)</h1>
+    </div>
+</div>
 
+<br />
+
+<div class="container" align="center">
+    <div class="col-md-8">
+        @Html.PropertyFor(m => m.CurrentPage.MainBody)
+    </div>
+
+    <br />
+
+    <div class="col-md-8" align="left">
+        <h3>Spillere</h3>
+
+        @{
+
+            foreach(var player in Model.Players)
+            {
+                <div>
+                    <a href="@Url.ContentUrl(player.ContentLink)">
+                        @Html.Raw(player.FirstName) @Html.Raw(player.LastName)
+                    </a>
+                </div>
+            }
+
+        }
+
+    </div>
+</div>

@@ -1,0 +1,45 @@
+﻿@model MatchApplication.Models.ViewModels.ForgotPasswordViewModel
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="row page-header">
+    <div class="col-md-12">
+        <h1 class="display-3" align="center">Glemt passord</h1>
+    </div>
+</div>
+
+<br />
+<div class="container" align="center">
+    <div class="col-md-8">
+        @if (!User.Identity.IsAuthenticated)
+        {
+            using (Html.BeginForm("SendMail", "ForgotPasswordPage", "Post"))
+            {
+                @Html.AntiForgeryToken()
+
+                @Html.TextBoxFor(m => m.Email, new { @class = "form-control", placeholder = "Epostadresse" })
+                <br />
+                <input type="submit" value="Send" class="btn btn-lg btn-primary btn-block" />
+
+            }
+        }
+        else
+        {
+            <div class="row page-header">
+                <div class="col-md-12">
+                    <h1 class="display-3" align="center">Du er allerede innlogget!</h1>
+                </div>
+            </div>
+        }
+        @if (Model.ErrorMessage != null)
+        {
+            <br />
+            <div class="col-md-8">
+                <div class="alert alert-danger form-control">@Model.ErrorMessage</div>
+            </div>
+        }
+
+    </div>
+</div>

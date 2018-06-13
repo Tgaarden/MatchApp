@@ -1,5 +1,8 @@
-﻿using EPiServer.Web.Mvc;
+﻿using EPiServer;
+using EPiServer.Web.Mvc;
+using MatchApplication.Infrastructure.Enums;
 using MatchApplication.Models.Pages;
+using MatchApplication.Models.ViewModels;
 using System;
 using System.Collections.Generic;
 using System.Configuration.Provider;
@@ -15,8 +18,26 @@ namespace MatchApplication.Controllers
         // GET: FrontPage
         public ActionResult Index(FrontPage currentPage)
         {
-            //CreateStandardSQLUser();
-            return View(currentPage);
+            var model = new FrontPageViewModel();
+            model.CurrentPage = currentPage;
+            model.UpcomingMatches = FindAllMatches(currentPage, MatchStatus.Upcoming);
+            model.PreviousMatches = FindAllMatches(currentPage, MatchStatus.Previous);
+            model.ActiveMatches = FindAllMatches(currentPage, MatchStatus.Active);
+
+            return View(model);
+        }
+
+        public List<MatchPage> FindAllMatches(FrontPage currentPage, MatchStatus matchStatus)
+        {
+            List<MatchPage> matches = new List<MatchPage>();
+
+            if (currentPage != null)
+            {
+                matches = DataFactory.Instance.GetChildren<MatchPage>(currentPage.ContentLink)
+                    .Where(x => x.MatchStatus == matchStatus).ToList();
+            }
+
+            return matches;
         }
 
         //protected void CreateStandardSQLUser()

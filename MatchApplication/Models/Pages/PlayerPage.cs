@@ -13,13 +13,13 @@ namespace MatchApplication.Models.Pages
         [Display(
             Name = "Draktnummer",
             GroupName = SystemTabNames.Content,
-            Order = 10)]
+            Order = 40)]
         public virtual int ShirtNumber { get; set; }
 
         [Display(
             Name = "Spillerposisjon",
             GroupName = SystemTabNames.Content,
-            Order = 20)]
+            Order = 50)]
         public virtual string Role { get; set; }
     }
 }

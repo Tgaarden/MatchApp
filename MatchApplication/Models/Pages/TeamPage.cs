@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using EPiServer.Core;
 using EPiServer.DataAbstraction;
@@ -15,6 +16,13 @@ namespace MatchApplication.Models.Pages
             GroupName = SystemTabNames.Content,
             Order = 10)]
         public virtual string TeamName { get; set; }
+
+        [Display(
+            Name = "Infofelt",
+            GroupName = SystemTabNames.Content,
+            Order = 20)]
+        public virtual XhtmlString MainBody { get; set; }
+
 
     }
 }

@@ -1,5 +1,7 @@
-﻿using EPiServer.Web.Mvc;
+﻿using EPiServer;
+using EPiServer.Web.Mvc;
 using MatchApplication.Models.Pages;
+using MatchApplication.Models.ViewModels;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -13,7 +15,23 @@ namespace MatchApplication.Controllers
         // GET: TeamPage
         public ActionResult Index(TeamPage currentPage)
         {
-            return View(currentPage);
+            var model = new TeamPageViewModel();
+            model.CurrentPage = currentPage;
+            model.Players = GetTeamPlayers(currentPage);
+
+            return View(model);
+        }
+
+        public List<PlayerPage> GetTeamPlayers(TeamPage currentPage)
+        {
+            List<PlayerPage> players = new List<PlayerPage>();
+
+            if(currentPage != null)
+            {
+                players = DataFactory.Instance.GetChildren<PlayerPage>(currentPage.ContentLink).ToList();
+            }
+
+            return players;
         }
     }
 }

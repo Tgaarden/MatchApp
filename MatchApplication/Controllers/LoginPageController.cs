@@ -69,7 +69,7 @@ namespace MatchApplication.Controllers
             }
             catch(Exception ex)
             {
-                model.ErrorMessage = "Innlogging feilet";
+                model.ErrorMessage = ex.ToString();
             }
             
             return View("Index", model);
@@ -84,5 +84,6 @@ namespace MatchApplication.Controllers
 
             return Redirect("/");
         }
+
     }
 }

@@ -10,6 +10,7 @@ namespace MatchApplication.Models.Pages
     [ContentType(DisplayName = "PersonPageBase", GUID = "43530052-6ba4-4d9d-b309-6d42ba443933", Description = "")]
     public class PersonPageBase : PageData
     {
+
         [Display(
             Name = "Fornavn",
             GroupName = SystemTabNames.Content,
@@ -24,9 +25,7 @@ namespace MatchApplication.Models.Pages
             Name = "Fødselsdato",
             GroupName = SystemTabNames.Content,
             Order = 30)]
-        public virtual int YearBorn { get; set; }
-
-
+        public virtual DateTime Birthday { get; set; }
 
     }
 }
