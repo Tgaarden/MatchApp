@@ -29,17 +29,18 @@
             <br />
 
             <input type="submit" value="Login" class="btn btn-lg btn-primary btn-block" />
-
+            <a href="/loginpage/forgotpasswordpage"><p>Glemt passord?</p></a>
         }
-        <br />
-        <p>Har du ikke allerede en bruker? Registrer deg <a href="/loginpage/registerpage">Her</a></p>
 
         @if (Model.ErrorMessage != null)
         {
-            <br />
-            <div class="col-md-8">
-                <div class="alert alert-danger form-control">@Model.ErrorMessage</div>
-            </div>
+        <br />
+        <div class="col-md-7">
+            <div class="alert alert-danger form-control">@Model.ErrorMessage</div>
+        </div>
         }
+        <br />
+        <p>Har du ikke allerede en bruker? Registrer deg <a href="/loginpage/registerpage">her</a>.</p>
+
     </div>
 </div>

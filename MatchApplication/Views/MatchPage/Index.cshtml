@@ -4,10 +4,28 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h1>@Html.PropertyFor(m => m.Title)</h1>
 
-<p>@Html.PropertyFor(m => m.HomeTeam) mot @Html.PropertyFor(m => m.Awayteam)</p>
+<div class="row page-header">
+    <div class="col-md-12">
+        <h1 class="display-3" align="center">@Html.PropertyFor(m => m.HomeTeam) mot @Html.PropertyFor(m => m.Awayteam)</h1>
+    </div>
+    <div class="col-md-12" align="center">
+        <h5>Kampstart @Html.PropertyFor(m => m.MatchStart)</h5>
+        <h5>Dommer @Html.PropertyFor(m => m.FirstName)</h5>
+    </div>
+</div>
+<br />
 
-<br/>
-<p>Kampstart @Html.PropertyFor(m => m.MatchStart)</p>
-<p>Kampslutt @Html.PropertyFor(m => m.MatchEnd)</p>
+
+
+<div class="container" align="center">
+    
+    <div class="col-md-8">
+        <div align="Center">
+            <h3>Hendelser</h3>
+            <div>
+                @Html.PropertyFor(m => m.ContentArea)
+            </div>
+        </div>
+    </div>
+</div>

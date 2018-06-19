@@ -1,0 +1,12 @@
+var {mainTemplateNameSpace};
+(function ({mainTemplateNameSpace}) {
+    "use strict";
+    
+//********************************************************************************
+//*CONSTRUCTOR********************************************************************
+//********************************************************************************
+
+    {mainTemplateNameSpace}.{templateName} = {
+{templateContent}
+    };
+    }({mainTemplateNameSpace}||({mainTemplateNameSpace} = {})));

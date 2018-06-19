@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>Eksempel på bruk av komponent</title>
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.7/styles/darkula.min.css">
+    <style>
+        body{
+            background-color: #e7e7e7;
+            font-family: sans-serif;
+        }
+        .intro{
+            background-color: #c7c7c7;
+            padding: 10px;
+        }
+
+        h3{
+            text-decoration: underline;
+        }
+    </style>
+    <script>
+        function _initApplication(){
+
+
+            hljs.initHighlightingOnLoad();
+        }
+    </script>
+</head>
+<body>
+    <h3>Komponentet</h3>
+    <div id="target"></div>
+    <h3>Intro</h3>
+    <p class="intro">
+    </p>
+    <h3></h3>
+    <pre>
+        <code class="javascript">
+        </code>
+    </pre>
+
+    <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.7/highlight.min.js"></script>
+    <script>
+            document.addEventListener("DOMContentLoaded", _initApplication, false);
+    </script>
+</body>
+</html>

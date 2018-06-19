@@ -1,8 +1,25 @@
-﻿
+﻿@model MatchApplication.Models.Pages.RefereePage
 @{
     ViewBag.Title = "Index";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h2>Index</h2>
 
+<div class="row page-header">
+    <div class="col-md-12">
+        <h1 class="display-3" align="center">@Html.PropertyFor(m => m.FirstName) @Html.PropertyFor(m => m.LastName)</h1>
+    </div>
+</div>
+
+<br />
+
+<div class="container" align="center">
+    <div class="col-md-8">
+        <div align="left">
+            <h3>Informasjon</h3>
+            <p>@Html.PropertyFor(m => m.Description)</p>
+            <br/>
+            <p>Fødselsdag   @Html.PropertyFor(m => m.Birthday)</p>
+        </div>
+    </div>
+</div>

@@ -214,6 +214,8 @@
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
   <ItemGroup>
     <Compile Include="Controllers\ArenaPageController.cs" />
+    <Compile Include="Controllers\Blocks\DefaultBlockController.cs" />
+    <Compile Include="Controllers\Blocks\DefaultBlockViewResult.cs" />
     <Compile Include="Controllers\CoachPageController.cs" />
     <Compile Include="Controllers\ForgotPasswordPageController.cs" />
     <Compile Include="Controllers\FrontPageController.cs" />
@@ -243,6 +245,7 @@
     <Compile Include="Models\Blocks\SubstituteBlock.cs" />
     <Compile Include="Models\Blocks\ThrowBlock.cs" />
     <Compile Include="Models\Blocks\YellowCardBlock.cs" />
+    <Compile Include="Models\Media\Image.cs" />
     <Compile Include="Models\Pages\ArenaPage.cs" />
     <Compile Include="Models\Pages\CoachPage.cs" />
     <Compile Include="Models\Pages\ContainerPage.cs" />
@@ -255,8 +258,13 @@
     <Compile Include="Models\Pages\RefereePage.cs" />
     <Compile Include="Models\Pages\RegisterPage.cs" />
     <Compile Include="Models\Pages\TeamPage.cs" />
+    <Compile Include="Models\ViewModels\BlockViewModel.cs" />
     <Compile Include="Models\ViewModels\ForgotPasswordViewModel.cs" />
     <Compile Include="Models\ViewModels\FrontPageViewModel.cs" />
+    <Compile Include="Models\ViewModels\IBlockViewModel.cs" />
+    <Compile Include="Models\ViewModels\ILayoutModel.cs" />
+    <Compile Include="Models\ViewModels\IPageViewModel.cs" />
+    <Compile Include="Models\ViewModels\PageViewModel.cs" />
     <Compile Include="Models\ViewModels\TeamPageViewModel.cs" />
     <Compile Include="Models\ViewModels\LoginViewModel.cs" />
     <Compile Include="Models\ViewModels\RegisterViewModel.cs" />
@@ -265,13 +273,14 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Business\" />
-    <Folder Include="Models\Media\" />
+    <Folder Include="Controllers\Blocks\Preview\" />
+    <Folder Include="Controllers\Pages\" />
     <Folder Include="Models\Properties\" />
     <Folder Include="Static\" />
+    <Folder Include="Views\Shared\Blocks\" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Content\bootstrap.css" />
-    <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\css\main.css" />
     <Content Include="Content\img\editor\articlepage.png" />
     <Content Include="Content\img\editor\carouselblock.png" />
     <Content Include="Content\img\editor\cartpage.png" />
@@ -294,13 +303,60 @@
     <Content Include="Content\img\editor\settings.png" />
     <Content Include="Content\img\editor\webshopfrontpage.png" />
     <Content Include="Content\img\editor\youtubevideoblock.png" />
-    <Content Include="Content\Site.css" />
+    <Content Include="Documentation\oxx.frontend.buildsystem\changelog.txt" />
+    <Content Include="Documentation\oxx.frontend.buildsystem\DefaultExample.html" />
+    <Content Include="Documentation\oxx.frontend.buildsystem\Node-sass i Webstorm file watcher.txt" />
+    <Content Include="Documentation\oxx.frontend.buildsystem\readme.txt" />
+    <Content Include="Documentation\oxx.frontend.buildsystem\SCSS-watcher.png" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="Grunt\files\grunt\gruntfile.js" />
+    <Content Include="Grunt\files\js\DevBuild.js" />
+    <Content Include="Grunt\files\templates\classTemplate.txt" />
+    <Content Include="Grunt\files\templates\classTemplateNoSubNamespace.txt" />
+    <Content Include="Grunt\files\templates\nugetTemplate.txt" />
+    <Content Include="Grunt\files\utils\NodeLinker.exe" />
+    <Content Include="Grunt\local_tasks\grunt-clean-svg\tasks\clean_svg_files.js" />
+    <Content Include="Grunt\local_tasks\grunt-create-dependency-cache\tasks\create-dependency-cache.js" />
+    <Content Include="Grunt\local_tasks\grunt-create-dependency-file\tasks\create-dependency-file.js" />
+    <Content Include="Grunt\local_tasks\grunt-create-ts-config-file\tasks\create-ts-config-file.js" />
+    <Content Include="Grunt\local_tasks\grunt-generate-nuget\tasks\create_nuget_package.js" />
+    <Content Include="Grunt\local_tasks\grunt-get-build-files-from-code\tasks\get-build-files-from-code.js" />
+    <Content Include="Grunt\local_tasks\grunt-get-svg\tasks\get_svg_file_content.js" />
+    <Content Include="Grunt\local_tasks\grunt-get-template\tasks\get_template.js" />
+    <Content Include="Grunt\local_tasks\grunt-inject-in-file\tasks\inject-in-file.js" />
+    <Content Include="Grunt\local_tasks\grunt-patch-grunt-files\tasks\patch-grunt-files.js" />
+    <Content Include="Grunt\local_tasks\grunt-resolve-dependency-file\tasks\resolve-dependency-file.js" />
+    <Content Include="Grunt\local_tasks\grunt-resolve-glob\tasks\resolve-glob.js" />
+    <Content Include="Grunt\local_tasks\grunt-run-tasks-on-files\tasks\run-tasks-on-files.js" />
+    <Content Include="Grunt\local_tasks\grunt-run-webpack\tasks\run-webpack.js" />
+    <Content Include="Grunt\local_tasks\grunt-setup-dev\tasks\setup-dev.js" />
+    <Content Include="Grunt\local_tasks\grunt-upload-nuget\tasks\upload-nuget-pakage.js" />
+    <Content Include="Grunt\local_tasks\grunt-version-bump\tasks\version_bump.js" />
+    <Content Include="Grunt\local_tasks\grunt-visual-studio-assembly-version-bump\tasks\visual-studio-assembly-version.js" />
+    <Content Include="Grunt\local_tasks\grunt-visual-studio-build\tasks\visual-studio-build.js" />
+    <Content Include="Grunt\modules\CSSBuild.js" />
+    <Content Include="Grunt\modules\DependencyBuild.js" />
+    <Content Include="Grunt\modules\DeveloperSetup.js" />
+    <Content Include="Grunt\modules\IconFontsBuild.js" />
+    <Content Include="Grunt\modules\ImageBuild.js" />
+    <Content Include="Grunt\modules\JavascriptBuild.js" />
+    <Content Include="Grunt\modules\KnockoutTemplatesBuild.js" />
+    <Content Include="Grunt\modules\NuGetBuild.js" />
+    <Content Include="Grunt\modules\ReleaseBuild.js" />
+    <Content Include="Grunt\modules\SVGTemplateBuild.js" />
+    <Content Include="Grunt\utils\GruntUtils.js" />
+    <Content Include="NodeLinker.exe" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
+    <Content Include="Grunt\files\templates\tsconfig.json.webpack.template" />
+    <Content Include="Grunt\files\templates\tsconfig.json.template" />
+    <Content Include="Grunt\files\installs\utils_install.bat" />
+    <Content Include="Grunt\files\installs\main_install.bat" />
+    <Content Include="Grunt\files\grunt\package.json" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
     <Content Include="Scripts\jquery-1.10.2.min.js" />
+    <Content Include="Scripts\js\jquery\jquery-3.3.1.slim.min.js" />
     <Content Include="Scripts\modernizr-2.6.2.js" />
     <Content Include="Views\Web.config">
       <SubType>Designer</SubType>
@@ -335,6 +391,17 @@
     <Content Include="Views\ForgotPasswordPage\ResetPassword.cshtml" />
     <Content Include="Views\ForgotPasswordPage\SendMail.cshtml" />
     <Content Include="Views\ForgotPasswordPage\ChangedPassword.cshtml" />
+    <Content Include="Views\Shared\GoalBlock.cshtml" />
+    <Content Include="Views\Shared\RedCardBlock.cshtml" />
+    <Content Include="Views\Shared\FreeKickBlock.cshtml" />
+    <Content Include="Views\Shared\CornerBlock.cshtml" />
+    <Content Include="Views\Shared\OffsideBlock.cshtml" />
+    <Content Include="Views\Shared\SubstituteBlock.cshtml" />
+    <Content Include="Views\Shared\PenaltyKickBlock.cshtml" />
+    <Content Include="Views\Shared\FiveMeterBlock.cshtml" />
+    <Content Include="Views\Shared\YellowCardBlock.cshtml" />
+    <Content Include="Views\Shared\ThrowBlock.cshtml" />
+    <Content Include="Views\Shared\Layout\_header.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

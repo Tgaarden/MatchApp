@@ -27,5 +27,11 @@ namespace MatchApplication.Models.Pages
             Order = 30)]
         public virtual DateTime Birthday { get; set; }
 
+        [Display(
+            Name = "Informasjon",
+            GroupName = SystemTabNames.Content,
+            Order = 30)]
+        public virtual XhtmlString Description { get; set; }
+
     }
 }

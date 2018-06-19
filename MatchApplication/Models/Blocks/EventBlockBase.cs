@@ -3,6 +3,8 @@ using System.ComponentModel.DataAnnotations;
 using EPiServer.Core;
 using EPiServer.DataAbstraction;
 using EPiServer.DataAnnotations;
+using EPiServer.Web;
+using MatchApplication.Models.Pages;
 
 namespace MatchApplication.Models.Blocks
 {
@@ -10,11 +12,18 @@ namespace MatchApplication.Models.Blocks
     public class EventBlockBase : BlockData
     {
 
+        //Hva burde være med:
+        //Ikon for hver hendelse
+        //Dropdown liste for lag, og målscorer (henter liste over alle spillerne på laget
+        //Oppdatere stillingen
+        //Tid i kampen hendelsen skjedde
+
         [Display(
             Name = "Spiller",
             GroupName = SystemTabNames.Content,
-            Order = 10)]
-        public virtual string Player { get; set; }
+            Order = 10), AllowedTypes(typeof(PlayerPage))]
+        public virtual ContentReference FirstName { get; set; }
+
         [Display(
             Name = "Minutt",
             GroupName = SystemTabNames.Content,
@@ -25,6 +34,7 @@ namespace MatchApplication.Models.Blocks
             Name = "Beskrivelse",
             GroupName = SystemTabNames.Content,
             Order = 30)]
+        [UIHint(UIHint.Textarea)]
         public virtual string Description { get; set; }
 
     }

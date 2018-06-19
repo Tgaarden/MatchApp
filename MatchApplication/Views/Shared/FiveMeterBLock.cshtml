@@ -1,0 +1,13 @@
+﻿@model MatchApplication.Models.Blocks.FiveMeterBlock
+
+@{
+    Layout = null;
+}
+
+<div>
+    <!--content link her til spiller, og image for hver blokk-->
+    <h4>INNSPARK!</h4>
+    <span>Innspark fra keeper i @Html.PropertyFor(m => m.Minute) minuttet.</span>
+    <p>@Html.PropertyFor(m => m.Description)</p>
+
+</div>

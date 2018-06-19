@@ -11,9 +11,9 @@ namespace MatchApplication.Models.Blocks
     {
 
         [Display(
-            Name = "Bytte",
+            Name = "Innbyttespiller",
             GroupName = SystemTabNames.Content,
-            Order = 20)]
+            Order = 40)]
         public virtual string PlayerIn { get; set; }
 
 

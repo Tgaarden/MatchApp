@@ -1,0 +1,6 @@
+
+.header {
+  position: relative;
+  color: $black;
+  @include border-radius(6px);
+}

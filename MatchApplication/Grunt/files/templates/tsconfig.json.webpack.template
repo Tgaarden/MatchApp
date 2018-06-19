@@ -1,0 +1,36 @@
+{
+	"compilerOptions": {
+		"baseUrl": "./",
+		"paths": {
+			"*": ["oxx_modules/*"]
+		},
+		"module": "es2015",
+		"watch": true,
+		"target": "es5",
+		"suppressImplicitAnyIndexErrors": true,
+		"noImplicitAny": true,
+		"preserveConstEnums": true,
+		"strictNullChecks": true,
+		"noImplicitReturns": true,
+		"sourceMap": true,
+		"experimentalDecorators": true,
+		"moduleResolution": "node",
+		"lib": [
+			"dom",
+			"es5",
+			"es2015.core",
+			"es2015.collection",
+			"es2015.promise",
+			"es2015.iterable",
+			"es2015.symbol",
+			"es2015.symbol.wellknown",
+			"es2015.generator"
+		]
+	},
+	"include": [
+		"scripts/test/**/*.ts",
+		"scripts/ts/**/*.ts",
+		"scripts/typings/**/*.ts",
+		"scripts/generated/**/*.ts"
+	]
+}

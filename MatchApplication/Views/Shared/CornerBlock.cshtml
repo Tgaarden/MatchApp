@@ -1,0 +1,12 @@
+﻿@model MatchApplication.Models.Blocks.CornerBlock
+
+@{
+    Layout = null;
+}
+
+<div>
+    <!--content link her til spiller, og image for hver blokk-->
+    <h4>CORNER!</h4>
+    <span>@Html.PropertyFor(m => m.FirstName) i det @Html.PropertyFor(m => m.Minute) minuttet.</span>
+    <p>@Html.PropertyFor(m => m.Description)</p>
+</div>

@@ -1,0 +1,13 @@
+﻿@model MatchApplication.Models.Blocks.ThrowBlock
+
+@{
+    Layout = null;
+}
+
+<div>
+    <!--content link her til spiller, og image for hver blokk-->
+    <h4>INNKAST!</h4>
+    <span>@Html.PropertyFor(m => m.FirstName) i det @Html.PropertyFor(m => m.Minute) minuttet.</span>
+    <p>@Html.PropertyFor(m => m.Description)</p>
+
+</div>

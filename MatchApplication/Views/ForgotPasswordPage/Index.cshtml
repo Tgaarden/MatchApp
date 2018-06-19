@@ -4,17 +4,18 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<div class="row page-header">
-    <div class="col-md-12">
-        <h1 class="display-3" align="center">Glemt passord</h1>
-    </div>
-</div>
-
-<br />
 <div class="container" align="center">
     <div class="col-md-8">
         @if (!User.Identity.IsAuthenticated)
         {
+            <div class="row page-header">
+                <div class="col-md-12">
+                    <h1 class="display-3" align="center">Glemt passord</h1>
+                </div>
+            </div>
+
+            <br />
+
             using (Html.BeginForm("SendMail", "ForgotPasswordPage", "Post"))
             {
                 @Html.AntiForgeryToken()

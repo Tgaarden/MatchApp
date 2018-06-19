@@ -42,8 +42,23 @@ namespace MatchApplication.Models.Pages
             Order = 50), AllowedTypes(typeof(TeamPage))]
         public virtual ContentReference Awayteam { get; set; }
 
-        [Display(Name = "Kampstatus", Order = 30)]
+        [Display(
+            Name = "Dommer",
+            GroupName = SystemTabNames.Content,
+            Order = 60), AllowedTypes(typeof(RefereePage))]
+        public virtual ContentReference FirstName { get; set; }
+
+        [Display(Name = "Kampstatus",
+            GroupName = SystemTabNames.Content,
+            Order = 70)]
         [EnumSelection(typeof(MatchStatus))]
         public virtual MatchStatus MatchStatus { get; set; }
+
+        [Display(
+            Name = "Hendelser",
+            GroupName = SystemTabNames.Content,
+            Order = 80)]
+        public virtual ContentArea ContentArea { get; set; }
+
     }
 }

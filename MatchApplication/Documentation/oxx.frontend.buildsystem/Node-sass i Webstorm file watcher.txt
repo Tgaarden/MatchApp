@@ -1,0 +1,36 @@
+=======================================================================================
+HVORDAN SETTE OPP NODE-SASS I WEBSTORM SIN DEFAULT SCSS FILE WATCHER
+=======================================================================================
+
+    Den siste versjonen av build systemet har fjernet en del dependencies vi bar brukt
+    tidligere, bl.a. Ruby. Dette gjøre at standard oppsettet i SCSS file watcheren ikke
+    fungerer lengre, men dette er enkelt å fikse.
+
+    Du er nødt til å enten kjøre main_install.bat filen i installs folderen, eller
+    installere node-sass manuelt på maskinen din. Sjekk bat fil for rebuild av node-sass,
+    som av og til må kjøres for å få node-sass til å kjøre på maskinen din.
+
+    Oppsett:
+    Gå til settings, og søk opp file watchers.
+
+    I Program input feltet skriver du inn:
+    C:\Users\"ditt bruker navn"\AppData\Roaming\npm\node-sass.cmd.
+    Du kan evn søke opp node-sass.cmd på maskinen din, og lime inn pathen til denne, hvis du ikke
+    har brukt installeringsløningen i build systemet.
+
+    Arguments må du oppdatere til:
+    $FileName$ $FileNameWithoutExtension$.css
+
+    Working directory:
+    $FileDir$
+
+    Enviromental variables skal være tom.
+
+    Output path to refresh:
+    $FileNameWithoutExtension$.css
+
+    Se bildet SCSS-watcher.png i dokumentasjonsfolderen for ref.
+
+    Etter at du har satt opp disse skal SCSS filer nå kompileres av node-sass.
+
+

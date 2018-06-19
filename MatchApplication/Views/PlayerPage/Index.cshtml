@@ -16,7 +16,10 @@
 <div class="container" align="center">
     <div class="col-md-8">
         <div align="left">
+            @Html.PropertyFor(m => m.ProfileImage)
             <h3>Informasjon</h3>
+            <p>@Html.PropertyFor(m => m.Description)</p>
+            <br />
             <p>Fødselsdag   @Html.PropertyFor(m => m.Birthday)</p>
             <p>Draktnummer  @Html.PropertyFor(m => m.ShirtNumber)</p>
             <p>Posisjon     @Html.PropertyFor(m => m.Role)</p>

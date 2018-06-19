@@ -1,9 +1,11 @@
 ﻿using System;
 using System.ComponentModel.DataAnnotations;
+using EPiServer;
 using EPiServer.Core;
 using EPiServer.DataAbstraction;
 using EPiServer.DataAnnotations;
 using EPiServer.SpecializedProperties;
+using EPiServer.Web;
 
 namespace MatchApplication.Models.Pages
 {
@@ -21,5 +23,12 @@ namespace MatchApplication.Models.Pages
             GroupName = SystemTabNames.Content,
             Order = 50)]
         public virtual string Role { get; set; }
+
+        [Display(
+            Name = "Spillerbilde",
+            GroupName = SystemTabNames.Content,
+            Order = 60)]
+        [UIHint(UIHint.Image)]
+        public virtual Url ProfileImage { get; set; }
     }
 }

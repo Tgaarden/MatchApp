@@ -1,0 +1,13 @@
+﻿@model MatchApplication.Models.Blocks.RedCardBlock
+
+@{
+    Layout = null;
+}
+
+<div>
+    <!--content link her-->
+    <h4>RØDT KORT!</h4>
+    <span>@Html.PropertyFor(m => m.FirstName) i det @Html.PropertyFor(m => m.Minute) minuttet.</span>
+    <p>@Html.PropertyFor(m => m.Description)</p>
+
+</div>

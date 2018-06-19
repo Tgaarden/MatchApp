@@ -4,53 +4,54 @@
     ViewBag.Title = Model.CurrentPage.Name;
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
-
-<div class="row page-header">
-    <div class="col-md-12">
-        <h1 class="display-3" align="center">Kamper</h1>
+<div class="frontPage__container">
+    <div class="row page-header">
+        <div class="col-md-12">
+            <h1 class="display-3" align="center">Kamper</h1>
+        </div>
     </div>
-</div>
 
-<br />
+    <br />
 
-<div class="container" align="center">
-    <h3 class="display-5" align="left">Kamper som spilles nå</h3>
-    <div class="col-md-8" align="left">
-        @foreach (var match in Model.ActiveMatches)
-        {
-            <div>
-                <a href="@Url.ContentUrl(match.ContentLink)">
-                    <p>@Html.Raw(match.HomeTeam) -  @Html.Raw(match.Awayteam)</p>
-                </a>
-            </div>
-        }
+    <div class="container" align="center">
+        <h3 class="display-5" align="left">Kamper som spilles nå</h3>
+        <div class="col-md-8" align="left">
+            @foreach (var match in Model.ActiveMatches)
+            {
+                <div>
+                    <a href="@Url.ContentUrl(match.ContentLink)">
+                        <p>@Html.Raw(match.HomeTeam) -  @Html.Raw(match.Awayteam)</p>
+                    </a>
+                </div>
+            }
+        </div>
     </div>
-</div>
 
-<div class="container" align="center">
-    <h3 class="display-5" align="left">Fremtidige kamper</h3>
-    <div class="col-md-8" align="left">
-        @foreach (var match in Model.UpcomingMatches)
-        {
-            <div>
-                <a href="@Url.ContentUrl(match.ContentLink)">
-                    <p>@Html.Raw(match.HomeTeam) -  @Html.Raw(match.Awayteam)</p>
-                </a>
-            </div>
-        }
+    <div class="container" align="center">
+        <h3 class="display-5" align="left">Fremtidige kamper</h3>
+        <div class="col-md-8" align="left">
+            @foreach (var match in Model.UpcomingMatches)
+            {
+                <div>
+                    <a href="@Url.ContentUrl(match.ContentLink)">
+                        <p>@Html.Raw(match.HomeTeam) -  @Html.Raw(match.Awayteam)</p>
+                    </a>
+                </div>
+            }
+        </div>
     </div>
-</div>
 
-<div class="container" align="center">
-    <h3 class="display-5" align="left">Ferdigspilte kamper</h3>
-    <div class="col-md-8" align="left">
-        @foreach (var match in Model.PreviousMatches)
-        {
-            <div>
-                <a href="@Url.ContentUrl(match.ContentLink)">
-                    <p>@Html.Raw(match.HomeTeam) -  @Html.Raw(match.Awayteam)</p>
-                </a>
-            </div>
-        }
+    <div class="container" align="center">
+        <h3 class="display-5" align="left">Ferdigspilte kamper</h3>
+        <div class="col-md-8" align="left">
+            @foreach (var match in Model.PreviousMatches)
+            {
+                <div>
+                    <a href="@Url.ContentUrl(match.ContentLink)">
+                        <p>@Html.Raw(match.HomeTeam) -  @Html.Raw(match.Awayteam)</p>
+                    </a>
+                </div>
+            }
+        </div>
     </div>
 </div>
