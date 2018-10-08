@@ -359,3 +359,33 @@ th {
 .frontPage__container .page-header {
   color: red;
   background-color: green; }
+
+html {
+  font-family: "Helvetica Neue", sans-serif;
+  width: 100%;
+  color: #666666;
+  text-align: center; }
+
+.popup-overlay {
+  position: absolute;
+  background: #ffffff;
+  border: 3px solid #666666;
+  width: 400px;
+  height: 300px;
+  left: 25%;
+  text-align: center;
+  z-index: 100; }
+
+button {
+  display: inline-block;
+  vertical-align: middle;
+  border-radius: 30px;
+  margin: .20rem;
+  font-size: 1rem;
+  color: #666666;
+  background: #ffffff;
+  border: 1px solid #666666; }
+
+button:hover {
+  border: 1px solid #666666;
+  background: #666666; }

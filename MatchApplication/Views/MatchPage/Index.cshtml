@@ -17,15 +17,17 @@
 <br />
 
 
-
+<div class="newEventDialog" style="display: none">@Html.Action("NewEventDialog", "MatchPage", Model)</div>
 <div class="container" align="center">
     
     <div class="col-md-8">
         <div align="Center">
             <h3>Hendelser</h3>
+			<button class="newEventButton">Ny hendelse</button>
             <div>
                 @Html.PropertyFor(m => m.ContentArea)
             </div>
         </div>
     </div>
 </div>
+

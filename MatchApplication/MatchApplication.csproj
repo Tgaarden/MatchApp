@@ -264,6 +264,7 @@
     <Compile Include="Models\ViewModels\IBlockViewModel.cs" />
     <Compile Include="Models\ViewModels\ILayoutModel.cs" />
     <Compile Include="Models\ViewModels\IPageViewModel.cs" />
+    <Compile Include="Models\ViewModels\MatchEventViewModel.cs" />
     <Compile Include="Models\ViewModels\PageViewModel.cs" />
     <Compile Include="Models\ViewModels\TeamPageViewModel.cs" />
     <Compile Include="Models\ViewModels\LoginViewModel.cs" />
@@ -357,6 +358,7 @@
     <Content Include="Scripts\jquery-1.10.2.js" />
     <Content Include="Scripts\jquery-1.10.2.min.js" />
     <Content Include="Scripts\js\jquery\jquery-3.3.1.slim.min.js" />
+    <Content Include="Scripts\js\jquery\main.js" />
     <Content Include="Scripts\modernizr-2.6.2.js" />
     <Content Include="Views\Web.config">
       <SubType>Designer</SubType>
@@ -402,6 +404,7 @@
     <Content Include="Views\Shared\YellowCardBlock.cshtml" />
     <Content Include="Views\Shared\ThrowBlock.cshtml" />
     <Content Include="Views\Shared\Layout\_header.cshtml" />
+    <Content Include="Views\Shared\_NewEventDialog.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

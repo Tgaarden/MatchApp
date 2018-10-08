@@ -192,3 +192,4 @@ src/Web/node_modules
 /.vs/Kondomeriet/v15/sqlite3
 .vs/
 MatchApplication/App_Data/
+MatchApplication/node_modules/
