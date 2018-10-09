@@ -213,6 +213,7 @@
   <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
   <ItemGroup>
+    <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\ArenaPageController.cs" />
     <Compile Include="Controllers\Blocks\DefaultBlockController.cs" />
     <Compile Include="Controllers\Blocks\DefaultBlockViewResult.cs" />
@@ -258,6 +259,7 @@
     <Compile Include="Models\Pages\RefereePage.cs" />
     <Compile Include="Models\Pages\RegisterPage.cs" />
     <Compile Include="Models\Pages\TeamPage.cs" />
+    <Compile Include="Models\Poko\Player.cs" />
     <Compile Include="Models\ViewModels\BlockViewModel.cs" />
     <Compile Include="Models\ViewModels\ForgotPasswordViewModel.cs" />
     <Compile Include="Models\ViewModels\FrontPageViewModel.cs" />

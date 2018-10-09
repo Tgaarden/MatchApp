@@ -1,6 +1,6 @@
 $(document).ready(function(){
 	$(".newEventButton").eq(0).on("click", openAddEventPopup);
-	$(".closePopup").on("click", closeAddEventPopup)
+	$(".closePopup").on("click", closeAddEventPopup);
 });
 
 function openAddEventPopup(event){
@@ -14,5 +14,4 @@ function closeAddEventPopup(event){
 	event.stopImmediatePropagation();
 	$(".newEventDialog").eq(0).hide();
 }
-
 

@@ -2,8 +2,43 @@
 
 <div class="popup-overlay">
 	<div class="popup-content">
-		<h2>ASD</h2>
-		<p>@Model.Test</p>
+		<h2>Nytt mål</h2>
+		@using (Html.BeginForm("NewEventDialog2", "MatchPage", FormMethod.Post))
+		{
+			<div class="row">
+				<div class="large-12 columns">
+					<select>
+						@foreach (var player in Model.Players)
+						{
+							<option value="@player.Id">@player.FirstName @player.LastName</option>
+						}
+					</select>
+						@Html.ValidationMessageFor(model => model.Players)
+					</div>
+			</div>
+			<div class="row">
+				<div class="large-12 columns">
+					@Html.DisplayNameFor(model => model.Description)
+					@Html.TextBoxFor(model => model.Description)
+					@Html.ValidationMessageFor(model => model.Description)
+				</div>
+			</div>
+			<div class="row">
+				<div class="large-12 columns">
+					@Html.DisplayNameFor(model => model.Minute)
+					@Html.TextBoxFor(model => model.Minute)
+					@Html.ValidationMessageFor(model => model.Minute)
+				</div>
+			</div>
+			@Html.HiddenFor(model => model.MatchPageId)
+			<div class="row">
+				<div class="large-4 columns">
+					<input class="addNewEventButton" type="submit" value="Send inn" placeholder="large-4.columns" />
+				</div>
+			</div>
+		}
+
+		@*<p>@Model.Test</p>*@
 		<button class="closePopup">Close</button>
 	</div>
 </div>
