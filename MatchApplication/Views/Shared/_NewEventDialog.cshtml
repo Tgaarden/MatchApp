@@ -3,10 +3,11 @@
 <div class="popup-overlay">
 	<div class="popup-content">
 		<h2>Nytt mål</h2>
-		@using (Html.BeginForm("NewEventDialog2", "MatchPage", FormMethod.Post))
+		@using (Html.BeginForm("NewEventDialog2", "MatchPage", FormMethod.Post, new { @class = "new-event-form" }))
 		{
 			<div class="row">
 				<div class="large-12 columns">
+					@Html.DisplayNameFor(model => model.PlayerId)
 					<select id="PlayerId" name="PlayerId">
 						@foreach (var player in Model.Players)
 						{
@@ -36,8 +37,6 @@
 				</div>
 			</div>
 		}
-
-		@*<p>@Model.Test</p>*@
 		<button class="closePopup">Close</button>
 	</div>
 </div>

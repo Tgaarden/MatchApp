@@ -218,6 +218,7 @@
     <Compile Include="Controllers\Blocks\DefaultBlockController.cs" />
     <Compile Include="Controllers\Blocks\DefaultBlockViewResult.cs" />
     <Compile Include="Controllers\CoachPageController.cs" />
+    <Compile Include="Controllers\EventController.cs" />
     <Compile Include="Controllers\ForgotPasswordPageController.cs" />
     <Compile Include="Controllers\FrontPageController.cs" />
     <Compile Include="Controllers\LoginPageController.cs" />
@@ -280,6 +281,7 @@
     <Folder Include="Controllers\Pages\" />
     <Folder Include="Models\Properties\" />
     <Folder Include="Static\" />
+    <Folder Include="Views\Event\" />
     <Folder Include="Views\Shared\Blocks\" />
   </ItemGroup>
   <ItemGroup>

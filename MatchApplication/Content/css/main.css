@@ -389,3 +389,9 @@ button {
 button:hover {
   border: 1px solid #666666;
   background: #666666; }
+
+.new-event-form {
+  display: inline-block; }
+
+form input {
+  margin-left: 10px; }
