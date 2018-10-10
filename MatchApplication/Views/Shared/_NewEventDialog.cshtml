@@ -7,14 +7,13 @@
 		{
 			<div class="row">
 				<div class="large-12 columns">
-					<select>
+					<select id="PlayerId" name="PlayerId">
 						@foreach (var player in Model.Players)
 						{
-							<option value="@player.Id">@player.FirstName @player.LastName</option>
+							<option value="@(Model.PlayerId = player.Id)">@player.FirstName @player.LastName</option>
 						}
 					</select>
-						@Html.ValidationMessageFor(model => model.Players)
-					</div>
+				</div>
 			</div>
 			<div class="row">
 				<div class="large-12 columns">

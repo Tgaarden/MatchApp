@@ -13,6 +13,7 @@ namespace MatchApplication.Models.ViewModels
 
 		public int MatchPageId { get; set; }
 		public List<Player> Players { get; set; }
+		public int PlayerId { get; set; }
 		public int Minute { get; set; }
 		public string Description { get; set; }
 

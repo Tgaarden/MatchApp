@@ -9,7 +9,9 @@ using MatchApplication.Models.Blocks;
 using MatchApplication.Models.Pages;
 using MatchApplication.Models.Poko;
 using MatchApplication.Models.ViewModels;
+using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Linq;
 using System.Web.Mvc;
 using System.Web.WebPages;
@@ -62,20 +64,23 @@ namespace MatchApplication.Controllers
 				var contentRepository = ServiceLocator.Current.GetInstance<IContentRepository>();
 				var pageRef = new PageReference(data.MatchPageId);
 				var currentPage = contentRepository.Get<PageData>(pageRef);
-				// create writable clone of the target block to be able to update its content area
+				// Create writable clone of the target block to be able to update its content area
 				var writableTargetBlock = (MatchPage) currentPage.CreateWritableClone();
 
-				// create and publish a new block with data fetched from SQL query
+				// Create and publish a new block with data fetched from SQL query
 				var newBlock = contentRepository.GetDefault<GoalBlock>(ContentReference.GlobalBlockFolder);
 
-				// the new block needs a name
-				((IContent)newBlock).Name = "block3" + data.Minute.ToString(); // make this name incremental for currentPage
+				// The new block needs a name
+				((IContent)newBlock).Name = "event" + data.Minute.ToString();
+
+				// Set properties
+				newBlock.FirstName = new ContentReference(data.PlayerId);
 				newBlock.Description = data.Description;
 				newBlock.Minute = data.Minute;
 
 				contentRepository.Save((IContent)newBlock, SaveAction.Publish, AccessLevel.NoAccess);
 
-				// add new block to the target block content area
+				// Add new block to the target block content area
 				writableTargetBlock.ContentArea.Items.Add(new ContentAreaItem
 				{
 					ContentLink = ((IContent)newBlock).ContentLink
