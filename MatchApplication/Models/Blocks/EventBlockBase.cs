@@ -18,10 +18,8 @@ namespace MatchApplication.Models.Blocks
         //Oppdatere stillingen
         //Tid i kampen hendelsen skjedde
 
-        [Display(
-            Name = "Spiller",
-            GroupName = SystemTabNames.Content,
-            Order = 10), AllowedTypes(typeof(PlayerPage))]
+        [Display(Name = "Spiller", GroupName = SystemTabNames.Content, Order = 10)]
+		[AllowedTypes(typeof(PersonPageBase))]
         public virtual ContentReference FirstName { get; set; }
 
         [Display(
