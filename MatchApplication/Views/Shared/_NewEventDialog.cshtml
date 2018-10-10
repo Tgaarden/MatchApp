@@ -3,7 +3,7 @@
 <div class="popup-overlay">
 	<div class="popup-content">
 		<h2>Nytt mål</h2>
-		@using (Html.BeginForm("NewEventDialog2", "MatchPage", FormMethod.Post, new { @class = "new-event-form" }))
+		@using (Html.BeginForm("CreateEvent", "Event", FormMethod.Post, new { @class = "new-event-form" }))
 		{
 			<div class="row">
 				<div class="large-12 columns">

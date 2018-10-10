@@ -78,7 +78,11 @@ namespace MatchApplication.Controllers
 				newBlock.Minute = data.Minute;
 
 				contentRepository.Save((IContent)newBlock, SaveAction.Publish, AccessLevel.NoAccess);
-
+				// Have to initiliaze the contentarea if no items exists allready
+				if (writableTargetBlock.ContentArea == null)
+				{
+					writableTargetBlock.ContentArea = new ContentArea();
+				}
 				// Add new block to the target block content area
 				writableTargetBlock.ContentArea.Items.Add(new ContentAreaItem
 				{
