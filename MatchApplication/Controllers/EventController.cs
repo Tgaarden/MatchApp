@@ -165,6 +165,11 @@ namespace MatchApplication.Controllers
 
 		public EventBlockBase CreateNewBlock(IContentRepository contentRepository, int eventId)
 		{
+			//TODO
+			//Trenger bare 1 eventblokk og kanskje noen properties som fylles etter behov.
+			//F.eks. Tittel = "RØDT KORT!", AnnenSpiller = Innbytter osv. Blokkene er relativt like
+			//Kan redusere mye kode på dette
+
 			var newBlock = new EventBlockBase();
 			switch (eventId)
 			{
