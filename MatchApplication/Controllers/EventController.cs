@@ -75,7 +75,7 @@ namespace MatchApplication.Controllers
 
 				// Create and publish a new block with data fetched from SQL query
 				//var newBlock = contentRepository.GetDefault<GoalBlock>(ContentReference.GlobalBlockFolder);
-				var newBlock = CreateNewBlock(contentRepository, data.EventId);
+				var newBlock = CreateNewBlock(contentRepository, data);
 				// The new block needs a name
 				((IContent)newBlock).Name = "event" + data.Minute.ToString();
 
@@ -163,7 +163,7 @@ namespace MatchApplication.Controllers
 			return eventList;
 		}
 
-		public EventBlockBase CreateNewBlock(IContentRepository contentRepository, int eventId)
+		public EventBlockBase CreateNewBlock(IContentRepository contentRepository, MatchEventViewModel data)
 		{
 			//TODO
 			//Trenger bare 1 eventblokk og kanskje noen properties som fylles etter behov.
@@ -171,7 +171,7 @@ namespace MatchApplication.Controllers
 			//Kan redusere mye kode på dette
 
 			var newBlock = new EventBlockBase();
-			switch (eventId)
+			switch (data.EventId)
 			{
 				case 0:
 					newBlock = contentRepository.GetDefault<CornerBlock>(ContentReference.GlobalBlockFolder);
@@ -192,10 +192,13 @@ namespace MatchApplication.Controllers
 					newBlock = contentRepository.GetDefault<PenaltyKickBlock>(ContentReference.GlobalBlockFolder);
 					break;
 				case 6:
+					
 					newBlock = contentRepository.GetDefault<RedCardBlock>(ContentReference.GlobalBlockFolder);
 					break;
 				case 7:
-					newBlock = contentRepository.GetDefault<SubstituteBlock>(ContentReference.GlobalBlockFolder);
+					var newSubstituteBlock = contentRepository.GetDefault<SubstituteBlock>(ContentReference.GlobalBlockFolder);
+					newSubstituteBlock.Substitute = new ContentReference(data.SubstituteId);
+					newBlock = newSubstituteBlock;
 					break;
 				case 8:
 					newBlock = contentRepository.GetDefault<ThrowBlock>(ContentReference.GlobalBlockFolder);

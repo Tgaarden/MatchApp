@@ -19,10 +19,10 @@
       <usages-collector id="statistics.lifecycle.project">
         <counts>
           <entry key="project.closed" value="3" />
-          <entry key="project.open.time.0" value="2" />
+          <entry key="project.open.time.0" value="3" />
           <entry key="project.open.time.1" value="2" />
           <entry key="project.open.time.6" value="1" />
-          <entry key="project.opened" value="5" />
+          <entry key="project.opened" value="6" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
@@ -43,34 +43,34 @@
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="js" value="588" />
-          <entry key="scss" value="177" />
+          <entry key="js" value="839" />
+          <entry key="scss" value="228" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="JavaScript" value="588" />
-          <entry key="SCSS" value="177" />
+          <entry key="JavaScript" value="839" />
+          <entry key="SCSS" value="228" />
         </counts>
       </usages-collector>
     </session>
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/Scripts/js/jquery/main.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="100">
-              <caret line="5" column="34" selection-start-line="5" selection-start-column="34" selection-end-line="5" selection-end-column="34" />
+            <state relative-caret-position="500">
+              <caret line="25" column="36" selection-start-line="25" selection-start-column="36" selection-end-line="25" selection-end-column="36" />
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Content/css/scss/Pages/_matchPage.scss">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="800">
-              <caret line="40" column="23" selection-start-line="40" selection-start-column="23" selection-end-line="40" selection-end-column="23" />
+            <state relative-caret-position="654">
+              <caret line="45" column="18" selection-start-line="45" selection-start-column="18" selection-end-line="45" selection-end-column="18" />
             </state>
           </provider>
         </entry>
@@ -104,8 +104,8 @@
         <option value="$PROJECT_DIR$/Content/css/scss/Html/_common.scss" />
         <option value="$PROJECT_DIR$/Scripts/main.js" />
         <option value="$PROJECT_DIR$/Content/css/main.scss" />
-        <option value="$PROJECT_DIR$/Scripts/js/jquery/main.js" />
         <option value="$PROJECT_DIR$/Content/css/scss/Pages/_matchPage.scss" />
+        <option value="$PROJECT_DIR$/Scripts/js/jquery/main.js" />
       </list>
     </option>
   </component>
@@ -125,7 +125,7 @@
     </packageJsonPaths>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="-8" />
+    <option name="x" value="-1928" />
     <option name="y" value="-8" />
     <option name="width" value="1936" />
     <option name="height" value="1056" />
@@ -224,11 +224,12 @@
       <workItem from="1538998246493" duration="6287000" />
       <workItem from="1539064693083" duration="2696000" />
       <workItem from="1539171222515" duration="272000" />
+      <workItem from="1539861704997" duration="2182000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="16063000" />
+    <option name="totallyTimeSpent" value="18245000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -240,7 +241,7 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
+    <frame x="-1928" y="-8" width="1936" height="1056" extended-state="6" />
     <editor active="true" />
     <layout>
       <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.25237092" />
@@ -344,17 +345,17 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Scripts/js/jquery/main.js">
+    <entry file="file://$PROJECT_DIR$/Content/css/scss/Pages/_matchPage.scss">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="100">
-          <caret line="5" column="34" selection-start-line="5" selection-start-column="34" selection-end-line="5" selection-end-column="34" />
+        <state relative-caret-position="654">
+          <caret line="45" column="18" selection-start-line="45" selection-start-column="18" selection-end-line="45" selection-end-column="18" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Content/css/scss/Pages/_matchPage.scss">
+    <entry file="file://$PROJECT_DIR$/Scripts/js/jquery/main.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="800">
-          <caret line="40" column="23" selection-start-line="40" selection-start-column="23" selection-end-line="40" selection-end-column="23" />
+        <state relative-caret-position="500">
+          <caret line="25" column="36" selection-start-line="25" selection-start-column="36" selection-end-line="25" selection-end-column="36" />
         </state>
       </provider>
     </entry>

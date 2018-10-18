@@ -6,6 +6,7 @@
 		@using (Html.BeginForm("CreateEvent", "Event", FormMethod.Post, new { @class = "new-event-form" }))
 		{
 			<div class="row">
+
 				<div class="large-12 columns">
 					@Html.DisplayNameFor(model => model.EventId)
 					<select id="EventId" name="EventId">
@@ -15,38 +16,53 @@
 						}
 					</select>
 				</div>
-				<div class="large-12 columns">
-					@Html.DisplayNameFor(model => model.PlayerId)
-					<select id="PlayerId" name="PlayerId">
-						@foreach (var player in Model.Players)
-						{
-							<option value="@(Model.PlayerId = player.Id)">@player.FirstName @player.LastName</option>
-						}
-					</select>
-				</div>
-			</div>
-			<div class="row">
-				<div class="large-12 columns">
-					@Html.DisplayNameFor(model => model.Description)
-					@Html.TextBoxFor(model => model.Description)
-					@Html.ValidationMessageFor(model => model.Description)
-				</div>
-			</div>
-			<div class="row">
-				<div class="large-12 columns">
-					@Html.DisplayNameFor(model => model.Minute)
-					@Html.TextBoxFor(model => model.Minute)
-					@Html.ValidationMessageFor(model => model.Minute)
-				</div>
-			</div>
-			@Html.HiddenFor(model => model.MatchPageId)
-			<div class="row">
-				<div class="large-4 columns">
-					<input class="addNewEventButton" type="submit" value="Send inn" placeholder="large-4.columns" />
+
+				<button type="button" class="openEventDetails">Ok</button>
+
+				<div class="form-details">
+					<div class="large-12 columns">
+						@Html.DisplayNameFor(model => model.PlayerId)
+						<select id="PlayerId" name="PlayerId">
+							@foreach (var player in Model.Players)
+							{
+								<option value="@(Model.PlayerId = player.Id)">@player.FirstName @player.LastName</option>
+							}
+						</select>
+					</div>
+					<div class="substitute-container">
+						<div class="large-12 columns">
+							@Html.DisplayNameFor(model => model.SubstituteId)
+							<select id="SubstituteId" name="SubstituteId">
+								@foreach (var player in Model.Players)
+								{
+									<option value="@(Model.SubstituteId = player.Id)">@player.FirstName @player.LastName</option>
+								}
+							</select>
+						</div>
+					</div>
+					<div class="row">
+						<div class="large-12 columns">
+							@Html.DisplayNameFor(model => model.Description)
+							@Html.TextBoxFor(model => model.Description)
+							@Html.ValidationMessageFor(model => model.Description)
+						</div>
+					</div>
+					<div class="row">
+						<div class="large-12 columns">
+							@Html.DisplayNameFor(model => model.Minute)
+							@Html.TextBoxFor(model => model.Minute)
+							@Html.ValidationMessageFor(model => model.Minute)
+						</div>
+					</div>
+					@Html.HiddenFor(model => model.MatchPageId)
+					<div class="row">
+						<div class="large-4 columns">
+							<input class="addNewEventButton" type="submit" value="Send inn" placeholder="large-4.columns" />
+						</div>
+					</div>
 				</div>
 			</div>
 		}
 		<button class="closePopup">Close</button>
 	</div>
 </div>
-

@@ -14,6 +14,10 @@ namespace MatchApplication.Models.ViewModels
 		public int PlayerId { get; set; }
 
 		[Required]
+		[Display(Name = "Spiller inn")]
+		public int SubstituteId { get; set; }
+
+		[Required]
 		[Display(Name = "Hendelse")]
 		public int EventId { get; set; }
 
