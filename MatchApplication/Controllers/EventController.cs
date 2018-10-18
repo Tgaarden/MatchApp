@@ -169,8 +169,21 @@ namespace MatchApplication.Controllers
 			//Trenger bare 1 eventblokk og kanskje noen properties som fylles etter behov.
 			//F.eks. Tittel = "RØDT KORT!", AnnenSpiller = Innbytter osv. Blokkene er relativt like
 			//Kan redusere mye kode på dette
-
 			var newBlock = new EventBlockBase();
+
+			var player = data.Players[0];
+
+			//Find player
+			foreach(var currentPlayer in data.Players)
+			{
+				if(currentPlayer.Id == data.PlayerId)
+				{
+					player = currentPlayer;
+				}
+			}
+
+			//player.Update();
+			
 			switch (data.EventId)
 			{
 				case 0:

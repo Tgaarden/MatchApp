@@ -1,4 +1,6 @@
-﻿using EPiServer.Web.Mvc;
+﻿using EPiServer;
+using EPiServer.ServiceLocation;
+using EPiServer.Web.Mvc;
 using MatchApplication.Models.Pages;
 using System;
 using System.Collections.Generic;
@@ -15,5 +17,5 @@ namespace MatchApplication.Controllers
         {
             return View(currentPage);
         }
-    }
+	}
 }
