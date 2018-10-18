@@ -5,10 +5,9 @@ using System.Web;
 
 namespace MatchApplication.Models.Poko
 {
-	public class Player
+	public class EventType
 	{
-		public string FirstName { get; set; }
-		public string LastName { get; set; }
+		public string BlockName { get; set; }
 		public int Id { get; set; }
 	}
 

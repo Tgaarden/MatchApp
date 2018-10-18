@@ -1,4 +1,5 @@
 ﻿using EPiServer.Core;
+using MatchApplication.Models.Blocks;
 using MatchApplication.Models.Pages;
 using MatchApplication.Models.Poko;
 using System.Collections.Generic;
@@ -8,12 +9,13 @@ namespace MatchApplication.Models.ViewModels
 {
 	public class MatchEventViewModel
 	{
-		//public List<BlockData> MatchEvents { get; set; }
-
-		//public string Test { get; set; }
 		[Required]
 		[Display(Name = "Spiller")]
 		public int PlayerId { get; set; }
+
+		[Required]
+		[Display(Name = "Hendelse")]
+		public int EventId { get; set; }
 
 		[Required]
 		[Display(Name = "Spilleminutt")]
@@ -26,6 +28,7 @@ namespace MatchApplication.Models.ViewModels
 
 		public List<Player> Players { get; set; }
 
-	}
+		public List<EventType> EventTypes { get; set; }
 
+	}
 }

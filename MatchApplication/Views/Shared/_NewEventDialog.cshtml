@@ -7,6 +7,15 @@
 		{
 			<div class="row">
 				<div class="large-12 columns">
+					@Html.DisplayNameFor(model => model.EventId)
+					<select id="EventId" name="EventId">
+						@foreach (var eventItem in Model.EventTypes)
+						{
+							<option value="@(Model.EventId = eventItem.Id)">@eventItem.BlockName</option>
+						}
+					</select>
+				</div>
+				<div class="large-12 columns">
 					@Html.DisplayNameFor(model => model.PlayerId)
 					<select id="PlayerId" name="PlayerId">
 						@foreach (var player in Model.Players)
